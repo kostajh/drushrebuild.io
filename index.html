@@ -3,22 +3,24 @@
 <head>
 <meta charset="utf-8" />
 <title>Drush Rebuild</title>
-
 <link rel="stylesheet" type="text/css" href="media/css/style.css" />
 </head>
+
 <body id="home">
+
 <header>
   <h1>Drush Rebuild</h1>
 </header>
+
 <p>Use the form below to generate a rebuild config file.</p>
 
-<form id="rebuild-generator" action="process">
+<form id="rebuild-generator" method="POST" onsubmit="return generate()">
 <fieldset>
 <legend>General</legend>
 
 <div>
   <label for="description">Description:</label>
-  <input name="description" type="textarea" placeholder="Brief description of rebuild tasks" optional autofocus>
+  <input name="description" type="textarea" placeholder="Brief description of rebuild tasks" optional autofocus> 
 </div>
 
 <div>
@@ -47,8 +49,17 @@
 
 </fieldset>
 
+<!--TODO: Radio button asking if syncing from remote source, site install, or something else-->
+<fieldset>
+  <legend>Sync options</legend>
+  <label for="default_source">Default source:</label>
+  <input name="default_source" type="textarea" optional placeholder="@example.prod">
+  <fieldset>
+  </fieldset>
+</fieldset>
+
 <div>
-  <input name="generate" type="submit" value="Generate">
+  <input name="generate" type="button" value="Generate">
 </div>
 
 </form>
