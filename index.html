@@ -12,7 +12,7 @@
   <h1>Drush Rebuild</h1>
 </header>
 
-<p>Use the form below to generate a rebuild config file.</p>
+<p class="description">A web interface for creating <a href="https://drupal.org/project/rebuild">Drush Rebuild</a> config files in YAML format.</p>
 
 <form id="rebuild-generator" method="POST" onsubmit="return generate()">
 <fieldset>
@@ -51,13 +51,40 @@
 
 <!--TODO: Radio button asking if syncing from remote source, site install, or something else-->
 <fieldset>
-  <legend>Sync options</legend>
-  <label for="default_source">Default source:</label>
-  <input name="default_source" type="textarea" optional placeholder="@example.prod">
-  <fieldset>
-  </fieldset>
+  <legend>Rebuild Type</legend>
+  <ul id="rebuild-type">
+    <li id="sync">
+      <fieldset>
+        <legend>Sync with remote environment</legend>
+          <div class="help">
+            <p>Use this option if you are pulling data from a remote environment into your local development environment.</p>
+          </div>
+          <label for="default_source">Default source:</label>
+          <input name="default_source" type="textarea" optional placeholder="@example.prod">
+        <legend>
+      </fieldset>
+    </li>
+    <li id="site-install">
+      <fieldset>
+        <div class="help">
+          <p>Options for the <code>drush site-install</code> command. Use this option if you are rebuilding from an install profile.</p>
+        </div>
+        <legend>Site Install</legend>
+        </legend>
+      </fieldset>
+    </li>
+    <li id="something-else">
+      <fieldset>
+      <legend>Something Else</legend>
+        <div class="help">
+          <p>Use this option if you plan to use <code>pre process</code> and <code>post process</code> scripts for rebuilding your environment.</p>
+        </div>
+      </fieldset>
+    </li>
+  </ul>
 </fieldset>
 
+<div id="rebuild-yaml"></div>
 <div>
   <input name="generate" type="button" value="Generate">
 </div>
