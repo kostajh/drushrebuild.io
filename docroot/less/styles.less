@@ -1,0 +1,239 @@
+// bootstrap imports
+@import "../dist/less/mixins.less";
+
+// drush rebuild imports
+@import "_mixins.less";
+@import "_variables.less";
+
+// --------------------------------
+
+body {
+  color: @gray-dark;
+  font-family: @source;
+  font-weight: 400;
+}
+
+.page-header {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-top: 1.5em;
+  padding-bottom: 2em;
+}
+
+h4.name {
+  color: @white;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  padding: 1em 0 2em;
+
+  span {
+    margin-left: 7px;
+    padding: 0 7px;
+    height: 24px;
+    background-color: #767676;
+    .border-radius(2px);
+  }
+}
+
+
+h1 {
+  font-size: 24px;
+
+  span.alias-box {
+    .border-radius(2px);
+    margin-right: 7px;
+    padding: 1px 15px;
+  }
+
+  span.alias {
+    font-size: 16px;
+    display: block;
+    margin-left: 37px;
+  }
+}
+
+
+//
+// Sidebar
+//
+
+// Hide for mobile, show later
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    background-color: #464646;
+    border-right: 1px solid #eee;
+    display: block;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto; // Scrollable contents if viewport is shorter than content.
+  }
+}
+
+//
+// Sidebar navigation
+//
+
+.nav-sidebar {
+  margin-right: -21px; // 20px padding + 1px border
+  margin-bottom: 20px;
+  margin-left: -20px;
+
+  > li {
+
+    > a {
+      color: #c7c7c7;
+      line-height: 24px;
+      padding: 14px 20px;
+      .transition(all 0.2s ease-out);
+
+      &:hover {
+        background-color: #323232;
+      }
+    }
+  }
+
+  > .active {
+
+    > a,
+    > a:hover,
+    > a:focus {
+      color: #464646;
+      background-color: @white;
+    }
+  }
+
+  > li a span.alias {
+    .border-radius(2px);
+    margin-right: 7px;
+    padding: 4px 12px;
+  }
+}
+
+div.nav-sidebar {
+  text-align: center;
+  padding: 1.2em 0;
+
+  a.btn {
+    color: @white;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-color: @gray-lighter;
+    .border-radius(3px);
+    margin: 0 auto;
+    padding: 12px;
+    width: 150px;
+    .transition(all 0.2s ease-out);
+
+    &:hover {
+      color: #464646;
+      background-color: @white;
+      border-color: @white;
+    }
+  }
+}
+
+
+//
+// Main content
+//
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+#alias-run {
+  border-bottom: 1px solid @gray-lighter;
+
+  div {
+    border-top: 1px solid @gray-lighter;
+    padding: 10px 0;
+  }
+
+  .label {
+    color: @gray-light;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .output {
+    font-size: 15px;
+  }
+}
+
+#action-btns {
+  padding: 3em 0 2em;
+
+  a.btn {
+    color: @white;
+    text-transform: uppercase;
+    margin-right: 7px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 200px;
+    .transition(all 0.2s ease-out);
+
+    &.rebuild {
+      background-color: #90bd6c;
+      border-color: #90bd6c;
+
+      &:hover {
+        background-color: lighten(#90bd6c, 10%);
+        order-color: darken(#90bd6c, 10%);
+      }
+    }
+
+    &.config {
+      background-color: #606060;
+      border-color: #606060;
+
+      &:hover {
+        background-color: lighten(#606060, 10%);
+        order-color: darken(#606060, 10%);
+      }
+    }
+  }
+}
+
+.progress {
+  height: 40px;
+  width: 75%;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
