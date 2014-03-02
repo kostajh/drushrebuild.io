@@ -3,6 +3,7 @@ body {
   color: #333333;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  background-color: #f3f3f3;
 }
 .page-header {
   border-bottom: none;
@@ -90,7 +91,7 @@ h1 span.alias {
 }
 div.nav-sidebar {
   text-align: center;
-  padding-top: 1em;
+  padding: 1.2em 0;
 }
 div.nav-sidebar a.btn {
   color: #ffffff;
@@ -114,6 +115,11 @@ div.nav-sidebar a.btn:hover {
 }
 .main {
   padding: 20px;
+}
+.main.main-top {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 40px;
 }
 @media (min-width: 768px) {
   .main {
@@ -141,7 +147,7 @@ div.nav-sidebar a.btn:hover {
   font-size: 15px;
 }
 #action-btns {
-  padding: 3em 0 2em;
+  padding: 3em 0 1.7em;
 }
 #action-btns a.btn {
   color: #ffffff;
@@ -171,8 +177,31 @@ div.nav-sidebar a.btn:hover {
   order-color: #474747;
 }
 .progress {
+  margin: 1.7em 0;
   height: 40px;
   width: 75%;
+}
+.progress-steps {
+  color: #555555;
+  font-size: 15px;
+}
+.progress-steps span {
+  color: #4d7dbd;
+  font-weight: 600;
+}
+.bash-output .label {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+  display: block;
+  padding: 0 0 2em;
+}
+.bash-output code {
+  color: #8c8c8c;
+  white-space: inherit;
+  padding: 0;
 }
 /*
  * Placeholder dashboard ideas

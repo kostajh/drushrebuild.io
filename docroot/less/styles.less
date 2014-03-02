@@ -11,6 +11,7 @@ body {
   color: @gray-dark;
   font-family: @source;
   font-weight: 400;
+  background-color: #f3f3f3;
 }
 
 .page-header {
@@ -148,6 +149,12 @@ div.nav-sidebar {
 
 .main {
   padding: 20px;
+
+  &.main-top {
+    background-color: @white;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 40px;
+  }
 }
 @media (min-width: 768px) {
   .main {
@@ -180,7 +187,7 @@ div.nav-sidebar {
 }
 
 #action-btns {
-  padding: 3em 0 2em;
+  padding: 3em 0 1.7em;
 
   a.btn {
     color: @white;
@@ -214,8 +221,38 @@ div.nav-sidebar {
 }
 
 .progress {
+  margin: 1.7em 0;
   height: 40px;
   width: 75%;
+}
+
+.progress-steps {
+  color: @gray;
+  font-size: 15px;
+
+  span {
+    color: @blue;
+    font-weight: 600;
+  }
+}
+
+.bash-output {
+
+  .label {
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 0 2em;
+  }
+
+  code {
+    color: #8c8c8c;
+    white-space: inherit;
+    padding: 0;
+  }
 }
 
 
