@@ -2,23 +2,56 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ember Starter Kit</title>
+  <title>drushrebuild.io</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 </head>
 <body>
-  <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
 
+  <script type="text/x-handlebars">
+    <div class="navbar">
+      <div class = "navbar-inner">
+        <a class="brand" href="#">DrushRebuild.io</a>
+        <ul class="nav">
+          <li>{{#link-to 'sites'}}Sites{{/link-to}}</li>
+          <li>{{#link-to 'about'}}About{{/link-to}}</li>
+        </ul>
+      </div>
+    </div>
     {{outlet}}
   </script>
 
-  <script type="text/x-handlebars" id="index">
-    <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
+  <script type="text/x-handlebars" id="sites">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <table class='table'>
+            <thead>
+              <tr><th>Sites</th></tr>
+              </thead>
+              {{#each model}}
+              <tr><td>
+                  {{#link-to 'site' this}}{{title}}{{/link-to}}
+              </td></tr>
+              {{/each}}
+          </table>
+        </div>
+        <div class="span9">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="site">
+    <h1>{{title}}</h1>
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <div class='about'>
+      <p>This is an about page.</p>
+    </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
